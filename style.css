@@ -1,0 +1,519 @@
+/* ====== Global style ====== */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap");
+
+:root {
+  --white: #ffffff;
+  --yellow: #fed385;
+  --blue: #0065fc;
+  --black: #000000;
+  --grey-1: #f2f2f2;
+  --grey-2: #d9d9d9;
+  --box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  --marge-mobile: 40px 20px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 50px;
+  color: var(--black);
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+img {
+  object-fit: cover;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.title-section {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-filter {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.grey-2 {
+  color: var(--grey-2);
+}
+
+.highlight {
+  font-weight: 600;
+}
+/* ====== Header ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+header > img {
+  height: 20px;
+}
+
+header > nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* navbar */
+.navbar {
+  display: flex;
+  height: 100%;
+}
+
+.navbar > li {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  border-top: var(--white) solid 2px;
+  border-bottom: var(--white) solid 2px;
+}
+
+.navbar > li:hover {
+  border-top-color: var(--blue);
+  cursor: pointer;
+}
+
+.navbar > li:hover a {
+  color: var(--blue);
+}
+/* ====== Main ====== */
+/* == Section 1 == */
+/* search bar */
+.search {
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: stretch;
+  height: 50px;
+  overflow: hidden;
+}
+
+.search > * {
+  font-size: 18px;
+  font-weight: 700;
+  border: solid 1px var(--grey-1);
+  background-color: var(--white);
+  padding: 0 16px;
+}
+
+.search label {
+  background-color: var(--grey-1);
+  display: flex;
+  align-items: center;
+}
+
+.search input[type="text"] {
+  outline: none;
+}
+
+.search input[type="text"]:focus {
+  border: 1px solid var(--blue);
+}
+
+.search-button {
+  height: 100%;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 0 15px 15px 0;
+  border: solid 1px var(--blue);
+}
+
+.search-button > .fa-magnifying-glass {
+  display: none;
+}
+/* filters */
+.filters {
+  margin: 36px 0;
+  display: flex;
+  align-items: center;
+}
+
+.filters .fa-solid {
+  color: var(--blue);
+}
+
+.filters button {
+  border: 2px solid var(--grey-2);
+  background-color: var(--white);
+  padding: 8px 16px;
+  margin: 0 15px;
+  border-radius: 25px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.filters button:hover {
+  background-color: #deebff;
+}
+
+.filters button > span {
+  padding-left: 10px;
+}
+/* == section 2 == */
+.result-info > span {
+  border-radius: 25px;
+  border: 1px var(--grey-2) solid;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* logements */
+.logements {
+  display: flex;
+  gap: 40px;
+}
+
+.logements > article {
+  background-color: var(--grey-1);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.list-logement {
+  flex: 2;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.top-logement {
+  flex: 1;
+}
+
+.list-logement > h2 {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.top-logement > h3 {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
+  border: 5px solid var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.top-logement .card {
+  display: flex;
+  height: 144px;
+  width: 100%;
+  margin-bottom: 33px;
+}
+
+.card > img {
+  width: 100%;
+  height: 124px;
+}
+
+.top-logement .card > img {
+  width: 144px;
+  height: 100%;
+}
+
+.card-info > * {
+  margin: 2px;
+}
+
+.card > div {
+  padding: 2px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-logement .card > div {
+  padding: 10px 0;
+  padding-left: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+/* == activités à marseille == */
+.activities {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.activity-card {
+  border-radius: 20px;
+  height: 444px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  flex: 0 1 25%;
+}
+
+.activity-card > img {
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.activity-card > div h3 {
+  padding: 20px;
+  margin: 0;
+}
+
+.activity-article {
+  margin: 60px 0;
+}
+/* === Footer === */
+footer {
+  background-color: var(--grey-1);
+  display: flex;
+  height: 225px;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.footer-card {
+  margin-left: 70px;
+  flex: 1;
+}
+
+footer h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+footer p {
+  margin: 10px 0;
+}
+/* ============ Media Queries ============ */
+@media screen and (max-width: 992px) {
+  .filters button {
+    font-size: 15px;
+    margin: 5px;
+  }
+
+  .logements {
+    flex-direction: column;
+  }
+
+  .top-logement > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .top-logement .card {
+    margin: 0;
+    min-width: 225px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .top-logement img {
+    width: 100px !important;
+  }
+
+  .activity-card {
+    height: 267px;
+  }
+}
+
+@media screen and (max-width: 832px) {
+  .filters {
+    display: block;
+  }
+
+  .filters h4 {
+    margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    height: 130px;
+  }
+
+  header > img {
+    margin: 20px 0;
+  }
+
+  header > nav {
+    width: 100%;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar > li {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .navbar > li:first-child {
+    border-bottom-color: var(--blue);
+  }
+
+  .navbar > li:hover {
+    border-top-color: var(--white);
+    border-bottom-color: var(--blue);
+  }
+
+  section:first-child,
+  .result-info {
+    margin: var(--marge-mobile);
+  }
+
+  .search-button > span {
+    display: none;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .search-button > .fa-magnifying-glass {
+    display: block;
+  }
+
+  .filters > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters > div > button {
+    text-align: start;
+    font-size: 11px;
+    flex: 1;
+    height: 50px;
+  }
+
+  .filters > div > button > i {
+    font-size: 14px;
+  }
+
+  .filters > div > button > span {
+    padding: 0;
+  }
+
+  .logements {
+    gap: 0;
+    flex-direction: column-reverse;
+  }
+
+  .logements > article {
+    padding: var(--marge-mobile);
+  }
+
+  .logements > article:first-child {
+    background-color: var(--white);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .logements > article:first-child .card {
+    height: 200px;
+  }
+
+  .top-logement .card > img {
+    width: 137px !important;
+  }
+
+  .top-logement > div {
+    gap: 10px;
+  }
+
+  .top-logement .card {
+    height: 134px;
+    flex: auto;
+  }
+
+  .activity-article {
+    padding: var(--marge-mobile);
+  }
+
+  .activities {
+    flex-direction: column;
+  }
+
+  .activity-card img {
+    height: 134px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-card {
+    margin-left: 30px;
+  }
+
+  footer h4 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  footer p {
+    margin: 10px 0;
+  }
+}
