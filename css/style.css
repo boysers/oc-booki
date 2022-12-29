@@ -93,88 +93,103 @@ a:hover {
   color: var(--blue);
 }
 
-/* ====== Main ====== */
-/* == Section 1 == */
-/* search bar */
-.search {
+.main > section {
+  margin: 24px 0;
+}
+
+.search > * {
+  margin: 24px 0;
+}
+
+.search-header__title {
+  margin-bottom: 8px;
+}
+
+.search-form {
   border-radius: 15px;
-  display: inline-flex;
+  display: flex;
   align-items: stretch;
   height: 50px;
   overflow: hidden;
 }
-
-.search > * {
+.search-form > * {
   font-size: 18px;
   font-weight: 700;
   border: solid 1px var(--grey-1);
   background-color: var(--white);
   padding: 0 16px;
 }
-
-.search label {
+.search-form__label {
   background-color: var(--grey-1);
   display: flex;
   align-items: center;
 }
-
-.search input[type="text"] {
+.search-form__input {
   outline: none;
 }
-
-.search input[type="text"]:focus {
+.search-form__input:focus {
   border: 1px solid var(--blue);
 }
-
-.search-button {
+.search-form__button {
   height: 100%;
   background-color: var(--blue);
   color: var(--white);
   border-radius: 0 15px 15px 0;
   border: solid 1px var(--blue);
 }
-
-.search-button > .fa-magnifying-glass {
+.search-form__button--icon {
   display: none;
 }
-/* filters */
-.filters {
-  margin: 36px 0;
+.search-form__button--text {
+  display: block;
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  font-weight: 700;
+  font-size: 17px;
+}
+.search-filters__title {
+  font-size: 18px;
+}
+.search-filters__button {
+  padding: 10px 16px;
+  border: 2px solid var(--grey-2);
+  border-radius: 25px;
+  background-color: var(--white);
+  cursor: pointer;
+}
+.search-filters__button:hover {
+  background-color: #deebff;
+}
+.search-filters__button--icon {
+  color: var(--blue);
+  padding-right: 10px;
+}
+
+.search-result {
   display: flex;
   align-items: center;
 }
-
-.filters .fa-solid {
+.search-result__icon {
   color: var(--blue);
-}
-
-.filters button {
-  border: 2px solid var(--grey-2);
-  background-color: var(--white);
-  padding: 8px 16px;
-  margin: 0 15px;
-  border-radius: 25px;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.filters button:hover {
-  background-color: #deebff;
-}
-
-.filters button > span {
-  padding-left: 10px;
-}
-/* == section 2 == */
-.result-info > span {
   border-radius: 25px;
   border: 1px var(--grey-2) solid;
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 8px;
+  font-size: 14px;
 }
+
+/* == section 2 == */
 /* logements */
 .logements {
   display: flex;
@@ -194,6 +209,7 @@ a:hover {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
 }
 
 .top-logement {
@@ -201,7 +217,6 @@ a:hover {
 }
 
 .list-logement > h2 {
-  margin: 0;
   grid-column: 1 / -1;
 }
 
@@ -316,11 +331,6 @@ a:hover {
 
 /* ============ Media Queries ============ */
 @media screen and (max-width: 992px) {
-  .filters button {
-    font-size: 15px;
-    margin: 5px;
-  }
-
   .logements {
     flex-direction: column;
   }
@@ -344,16 +354,6 @@ a:hover {
 
   .activity-card {
     height: 267px;
-  }
-}
-
-@media screen and (max-width: 832px) {
-  .filters {
-    display: block;
-  }
-
-  .filters h4 {
-    margin: 15px 0;
   }
 }
 
@@ -393,41 +393,28 @@ a:hover {
     color: var(--blue);
   }
 
-  section:first-child,
-  .result-info {
-    margin: var(--marge-mobile);
-  }
-
-  .search-button > span {
-    display: none;
-  }
-
-  .search input {
+  .search-form__input {
     width: 100%;
   }
-
-  .search-button > .fa-magnifying-glass {
+  .search-form__button--text {
+    display: none;
+  }
+  .search-form__button--icon {
     display: block;
   }
 
-  .filters > div {
+  .search-filters {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .filters > div > button {
-    text-align: start;
+  .search-filters__title {
+    grid-column: 1 / -1;
+  }
+  .search-filters__button {
     font-size: 11px;
-    flex: 1;
-    height: 50px;
   }
-
-  .filters > div > button > i {
-    font-size: 14px;
-  }
-
-  .filters > div > button > span {
-    padding: 0;
+  .search-filters__button--icon {
+    font-size: 12px;
   }
 
   .logements {
