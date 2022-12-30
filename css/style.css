@@ -8,7 +8,7 @@
   --grey-1: #f2f2f2;
   --grey-2: #d9d9d9;
   --box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-  --marge-mobile: 28px 20px;
+  --marge-mobile: 25px 20px;
 }
 
 * {
@@ -27,6 +27,16 @@ body {
   box-sizing: border-box;
 }
 
+h2,
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+}
+
 img {
   object-fit: cover;
   width: 100%;
@@ -41,7 +51,7 @@ a {
   text-decoration: none;
   color: var(--black);
 }
-a:hover {
+a:hover:not(.lodgings a, .activities a) {
   color: var(--blue);
 }
 
@@ -91,10 +101,13 @@ a:hover {
 .header__navbar li:hover a {
   font-weight: 500;
   color: var(--blue);
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .main > section {
-  margin: 24px 0;
+  margin: 50px 0;
 }
 
 .search > * {
@@ -129,6 +142,9 @@ a:hover {
 }
 .search-form__input:focus {
   border: 1px solid var(--blue);
+}
+.search-form__input::placeholder {
+  color: var(--black);
 }
 .search-form__button {
   height: 100%;
@@ -192,15 +208,15 @@ a:hover {
 .lodgings {
   display: flex;
   justify-content: flex-end;
-  gap: 40px;
+  gap: 25px;
 }
 
 .lodging-list,
 .lodging-top {
   background-color: var(--grey-1);
   border-radius: 20px;
-  padding: 36px;
-  gap: 30px;
+  padding: 25px;
+  gap: 25px;
 }
 
 .card {
@@ -225,9 +241,10 @@ a:hover {
   overflow-y: auto;
 }
 .card-info__title {
-  font-size: 16px;
+  font-size: 15px;
 }
 .card-info__price {
+  font-size: 13px;
   flex: 1;
   margin: 7px 0;
 }
@@ -248,7 +265,7 @@ a:hover {
 
 .lodging-list-card {
   flex-direction: column;
-  height: auto;
+  height: 100%;
 }
 .lodging-list-card__picture {
   height: 124px;
@@ -272,7 +289,11 @@ a:hover {
 }
 
 .lodging-top-card__picture {
-  width: 144px;
+  width: 40%;
+}
+.lodging-top .card-info {
+  width: 100%;
+  flex: 1;
 }
 
 .activities {
@@ -286,11 +307,16 @@ a:hover {
   width: 100%;
 }
 
+.activities a {
+  width: calc(25% - 25px);
+}
+
 .activity-card {
   display: flex;
   border-radius: 20px;
   flex-direction: column;
-  width: calc(25% - 35px);
+  /* width: calc(25% - 35px); */
+  height: 100%;
   box-shadow: var(--box-shadow);
   overflow: hidden;
 }
@@ -300,8 +326,10 @@ a:hover {
   display: block;
 }
 .activity-card__title {
-  padding: 10px 20px;
+  padding: 16px 20px;
   margin: auto 0;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .footer {
@@ -324,7 +352,28 @@ a:hover {
   margin: 12px auto;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
+  body {
+    padding: 0 40px;
+  }
+
+  .search-filters {
+    gap: 10px;
+  }
+
+  .search-filters__button {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .search-filters__button--icon {
+    padding-right: 2px;
+  }
+
+  .lodging-list,
+  .lodging-top {
+    gap: 15px;
+  }
+
   .lodgings {
     flex-direction: column;
   }
@@ -338,24 +387,37 @@ a:hover {
   }
 
   .lodging-top-card__picture {
-    width: 100%;
-    max-width: 100px;
-    min-width: 50px;
+    width: 34%;
   }
-  .lodging-top .card-info__title {
+
+  .card-info__title {
     font-size: 14px;
+  }
+  .lodging-top .card-info {
+    margin: 10px 5px;
+  }
+
+  .activities a {
+    width: calc(25% - 20px);
   }
 
   .activity-card__picture {
     height: 196px;
   }
+  .activity-card__title {
+    font-size: 14px;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   body {
     padding: 0;
     margin: 0;
     width: 100%;
+  }
+
+  .main > section {
+    margin: 20px 0;
   }
 
   .header {
@@ -375,16 +437,11 @@ a:hover {
     flex: 1;
     display: flex;
     justify-content: center;
+    border-bottom-color: var(--grey-1);
   }
   .header__navbar li:hover {
     border-top-color: var(--white);
     border-bottom-color: var(--blue);
-  }
-  .header__navbar--active {
-    border-bottom-color: var(--blue) !important;
-  }
-  .header__navbar--active a {
-    color: var(--blue);
   }
 
   .search {
@@ -409,7 +466,7 @@ a:hover {
     grid-column: 1 / -1;
   }
   .search-filters__button {
-    font-size: 11px;
+    font-size: 12px;
   }
   .search-filters__button--icon {
     font-size: 12px;
@@ -431,23 +488,35 @@ a:hover {
     display: flex;
     flex-direction: column;
   }
+  .lodging-list__show-btn {
+    text-align: center;
+    padding: 8px 0;
+  }
 
   .lodging-top {
     display: flex;
   }
 
-  .lodging-top .card__picture {
-    width: 140px;
-    max-width: 140px;
-    min-width: 140px;
+  .card-info__price,
+  .card-info__title {
+    font-size: 16px;
   }
 
   .activities {
     flex-direction: column;
     padding: var(--marge-mobile);
+    gap: 12px;
   }
+
+  .activities a {
+    width: 100%;
+  }
+
   .activity-card {
     width: 100%;
+  }
+  .activity-card__title {
+    font-size: 16px;
   }
   .activity-card__picture {
     height: 134px;
@@ -457,7 +526,7 @@ a:hover {
     display: block;
     height: 500px;
     padding: 5px 0;
-    margin-left: 30px;
+    padding-left: 30px;
   }
   .footer-card {
     margin: 40px auto;
