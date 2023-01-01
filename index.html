@@ -11,17 +11,23 @@
     ></script>
   </head>
   <body>
+    <!-- L'entête avec le logo et la bar de navigation -->
     <header class="header">
+      <!-- Logo -->
       <div class="header__logo">
         <a href="/"><img src="img/logo/Booki.png" alt="logo booki" /></a>
       </div>
+
+      <!-- Bar de navigation -->
       <nav class="header__navbar">
         <ul>
           <li><a href="#lodgings">Hébergements</a></li>
           <li><a href="#activities">Activités</a></li>
         </ul>
       </nav>
-    </header>
+    </header><!-- .header -->
+
+    <!-- Contenu principal -->
     <main class="main">
       <section class="search">
         <div class="search-header">
@@ -29,7 +35,9 @@
             Trouvez votre hébergement pour des vacances de rêve
           </h1>
           <p>En plein centre-ville ou en pleine nature</p>
-        </div>
+        </div><!-- .search-header -->
+
+        <!-- Formulaire de recherche -->
         <form class="search-form">
           <label for="search" class="search-form__label"
             ><i class="fa-solid fa-location-dot"></i
@@ -47,7 +55,8 @@
             </span>
             <span class="search-form__button--text">Rechercher</span>
           </button>
-        </form>
+        </form><!-- .search-form -->
+
         <div class="search-filters">
           <h2 class="search-filters__title">Filtres</h2>
           <div class="search-filters__button">
@@ -68,7 +77,9 @@
             <i class="fa-solid fa-dog search-filters__button--icon"></i>
             <span>Animaux autorisés</span>
           </div>
-        </div>
+        </div><!-- .search-filters -->
+
+        <!-- Information statistiques du résultat de recherche  -->
         <div class="search-result">
           <div class="search-result__icon">
             <i class="fa-solid fa-info"></i>
@@ -76,11 +87,15 @@
           <p class="search-result__result-info">
             Plus de 500 logements sont disponibles dans cette ville
           </p>
-        </div>
-      </section>
+        </div><!-- .search-result -->
+      </section><!-- .search  -->
+
+      <!-- Résultats de recherche des hébergements -->
       <section class="lodgings" id="lodgings">
+        <!-- Liste des herbergements -->
         <div class="lodging-list">
           <h2 class="lodging-list__title">Hébergements à Marseille</h2>
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -102,7 +117,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -124,7 +140,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -146,7 +163,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -168,7 +186,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -190,7 +209,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <a href="#">
             <article class="card lodging-list-card">
               <img
@@ -212,14 +232,18 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-list-card -->
+
           <div class="lodging-list__show-btn">Afficher plus</div>
-        </div>
+        </div><!-- .lodging-list -->
+
+        <!-- Liste des tops hébergements -->
         <aside class="lodging-top">
           <h2 class="lodging-top__title">
             Les plus populaires
             <i class="fa-solid fa-chart-line blue"></i>
           </h2>
+
           <a href="#">
             <article class="lodging-top-card card">
               <img
@@ -241,7 +265,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-top-card -->
+
           <a href="#">
             <article class="lodging-top-card card">
               <img
@@ -265,7 +290,8 @@
                 </div>
               </div>
             </article>
-          </a>
+          </a><!-- .card .lodging-top-card -->
+
           <a href="#">
             <article class="lodging-top-card card">
               <img
@@ -287,11 +313,14 @@
                 </div>
               </div>
             </article>
-          </a>
-        </aside>
-      </section>
+          </a><!-- .card .lodging-top-card -->
+        </aside><!-- .lodging-top -->
+      </section><!-- .lodgings -->
+
+      <!-- Résultats des activitées relatives à la recherche d'hébergement -->
       <section class="activities" id="activities">
         <h2 class="activities__title">Activités à Marseille</h2>
+
         <a href="#">
           <figure class="activity-card">
             <img
@@ -301,7 +330,8 @@
             />
             <figcaption class="activity-card__title">Vieux-Port</figcaption>
           </figure>
-        </a>
+        </a><!-- .activity-card -->
+
         <a href="#">
           <figure class="activity-card">
             <img
@@ -313,7 +343,8 @@
               Fort de Pomègues
             </figcaption>
           </figure>
-        </a>
+        </a><!-- .activity-card -->
+
         <a href="#">
           <figure class="activity-card">
             <img
@@ -325,7 +356,8 @@
               Parc national des Calanques
             </figcaption>
           </figure>
-        </a>
+        </a><!-- .activity-card -->
+
         <a href="#">
           <figure class="activity-card">
             <img
@@ -337,26 +369,30 @@
               Notre-Dame-de-la-Garde
             </figcaption>
           </figure>
-        </a>
-      </section>
-    </main>
+        </a><!-- .activity-card -->
+      </section><!-- .activities -->
+    </main><!-- .main -->
+
+    <!-- Pied de page  -->
     <footer class="footer">
       <div class="footer-card">
         <h3 class="footer-card__title">À propos</h3>
         <a href="#" class="footer-card__link">Fonctionnement du site</a>
         <a href="#" class="footer-card__link">Conditions générales</a>
         <a href="#" class="footer-card__link">Données et confidentialité</a>
-      </div>
+      </div><!-- .footer-card -->
+
       <div class="footer-card">
         <h3 class="footer-card__title">Nos hébergements</h3>
         <a href="#" class="footer-card__link">Charte qualité</a>
         <a href="#" class="footer-card__link">Proposer votre hôtel</a>
-      </div>
+      </div><!-- .footer-card -->
+
       <div class="footer-card">
         <h3 class="footer-card__title">Assistance</h3>
         <a href="#" class="footer-card__link">Centre d’aide</a>
         <a href="#" class="footer-card__link">Nous contacter</a>
-      </div>
-    </footer>
+      </div><!-- .footer-card -->
+    </footer><!-- .footer -->
   </body>
 </html>
