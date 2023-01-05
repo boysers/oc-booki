@@ -516,6 +516,7 @@ a:hover:not(.lodgings a, .activities a) {
   .lodging-top {
     padding: var(--marge-mobile);
     gap: 12px;
+    border-radius: 0;
   }
 
   /* Liste hébergements */
