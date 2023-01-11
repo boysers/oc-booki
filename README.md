@@ -1,6 +1,6 @@
-# site Booki
+# OC Booki
 
-Une démo du site [boysers.github.io/site-booki](https://boysers.github.io/site-booki) .
+Une démo du site [boysers.github.io/oc-booki](https://boysers.github.io/oc-booki) .
 
 ## Screenshots
 
